@@ -10,11 +10,14 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>account-service-spi</module>
+        <module>account-service-impl</module>
+        <module>app</module>
+        <module>blockchain-service-spi</module>
+        <module>blockchain-service-impl</module>
         <module>common</module>
         <module>key-management-service-spi</module>
         <module>key-management-service-impl</module>
-        <module>blockchain-service-spi</module>
-        <module>blockchain-service-impl</module>
         <module>wallet-service-spi</module>
         <module>wallet-service-impl</module>
     </modules>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.collections.ObservableList?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easya.assetmanager.ui.controller.TradingController">
+    <!-- Main Content Area -->
+    <HBox spacing="5">
+        <Label text="Issuer" prefWidth="50"/>
+        <ComboBox promptText="Address" prefWidth="480">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="nHBxELyQppydde3uz5ajnUkTjXj1ZQqu6C7DE2S9oLJhsdobSfc3"/>
+                    <String fx:value="nHBPvhvw9jytUCrW9FsvoY6ChhgtDFTvNnNSiRomJjheYejqdgpL"/>
+                    <String fx:value="nHBjBGBfyqWzqo2ZhqmKJDLiDNjKNv6n2bbyNTQADMaUDx7bhzPN"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <TextField promptText="Symbol" prefWidth="80"/>
+    </HBox>
+    <Separator />
+    <GridPane hgap="20" vgap="20" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="0" right="10" bottom="10" left="10"/>
+        </padding>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="50" />
+            <RowConstraints percentHeight="50" />
+        </rowConstraints>
+        <children>
+            <!-- Market Price Chart -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <children>
+                    <Label text="Asset Price &amp; Volume" />
+                    <LineChart fx:id="assetChart" minHeight="150" prefHeight="282.0" prefWidth="435.0" 
+                              style="-fx-background-color: white; -fx-border-color: #888; -fx-border-radius: 10;">
+                        <xAxis>
+                            <CategoryAxis label="Date" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Value ($)" />
+                        </yAxis>
+                    </LineChart>
+                </children>
+            </VBox>
+            <!-- Order Book -->
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <children>
+                    <Label text="Order Book" />
+                    <ImageView fx:id="orderBookImage">
+                        <image>
+                            <Image url="/images/order-book.png" />
+                        </image>
+                    </ImageView>
+                </children>
+            </VBox>
+            <!-- Order History -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <children>
+                    <Label text="Order History" />
+                    <ImageView fx:id="orderHistoryImage">
+                        <image>
+                            <Image url="/images/order-history.png" />
+                        </image>
+                    </ImageView>
+                </children>
+            </VBox>
+            <!-- Order Trade Form -->
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <children>
+                    <Label text="Place Order" />
+                    <VBox minHeight="150" prefHeight="282.0" prefWidth="435.0" style="-fx-border-color: #888; -fx-border-radius: 10;" spacing="10">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT" HBox.hgrow="ALWAYS">
+                            <Label text="Account Balance (USD) " prefWidth="180"/>
+                            <Text text="1,003.33 " />
+                        </TextFlow>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT" HBox.hgrow="ALWAYS">
+                            <Label text="Asset Balance " prefWidth="180"/>
+                            <Text text="400.534 " />
+                        </TextFlow>
+                        <Separator />
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Price " prefWidth="180" />
+                            <TextField promptText="Price" prefWidth="100" />
+                        </HBox>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Quantity " prefWidth="180" />
+                            <TextField promptText="Quantity" prefWidth="100" />
+                        </HBox>
+                        <HBox spacing="5">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Button text="Buy" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+                                <Button text="Sell" HBox.hgrow="ALWAYS" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </children>
+            </VBox>
+        </children>
+    </GridPane>
+</VBox>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.collections.ObservableList?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Separator?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easya.assetmanager.ui.controller.AssetController">
+    <!-- Main Content Area -->
+    <HBox spacing="5">
+        <Label text="Issuer" prefWidth="50"/>
+        <ComboBox promptText="Address" prefWidth="480">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="nHBxELyQppydde3uz5ajnUkTjXj1ZQqu6C7DE2S9oLJhsdobSfc3"/>
+                    <String fx:value="nHBPvhvw9jytUCrW9FsvoY6ChhgtDFTvNnNSiRomJjheYejqdgpL"/>
+                    <String fx:value="nHBjBGBfyqWzqo2ZhqmKJDLiDNjKNv6n2bbyNTQADMaUDx7bhzPN"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <TextField promptText="Symbol" prefWidth="80"/>
+    </HBox>
+    <Separator />
+    <GridPane hgap="20" vgap="20" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="0" right="10" bottom="10" left="10"/>
+        </padding>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="50" />
+            <RowConstraints percentHeight="50" />
+        </rowConstraints>
+        <children>
+            <!-- Liquidity Pool Pie Chart -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <children>
+                    <HBox spacing="5">
+                        <Label text="Liquidity Pool" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox promptText="Asset Pair" prefWidth="150">
+                            <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="RLUSD"/>
+                                <String fx:value="USDC"/>
+                                <String fx:value="wBTC"/>
+                            </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+                    <PieChart fx:id="liquidityPoolChart" minHeight="150" prefHeight="281.0" prefWidth="435.0" 
+                             style="-fx-background-color: white; -fx-border-color: #888; -fx-border-radius: 10;"
+                             legendVisible="false"
+                             labelsVisible="true" />
+                    
+                </children>
+            </VBox>
+            <!-- Liquidity Pool Management Form -->
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <children>
+                    <Label text="Liquidity Pool Management" />
+                    <VBox minHeight="150" prefHeight="282.0" prefWidth="435.0" style="-fx-border-color: #888; -fx-border-radius: 10;" spacing="10">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="Liquidity Pool TVL (USD) " prefWidth="180"/>
+                            <Text text="250,000 " />
+                        </TextFlow>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="Pool Ratio (XRP/RLUSD) "  prefWidth="180"/>
+                            <Text text="1:1.5 " />
+                        </TextFlow>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="LP Token Balance " prefWidth="180"/>
+                            <Text text="100 " />
+                        </TextFlow>
+                        <Separator />
+                        <HBox spacing="5">
+                            <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                                <Label text="LP Token Amount " prefWidth="180"/>
+                                <TextField promptText="Amount" prefWidth="100"/>
+                            </TextFlow>
+                        </HBox>
+                        <HBox spacing="5">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Button text="Mint" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+                                <Button text="Burn" HBox.hgrow="ALWAYS" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </children>
+            </VBox>
+            <!-- Asset Details -->
+            <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <children>
+                    <Label text="Asset Details" />
+                    <TableView fx:id="assetDetailsTable" prefHeight="263.0" prefWidth="435.0" styleClass="left-aligned-table">
+                        <columns>
+                            <TableColumn text="Property" />
+                            <TableColumn text="Value" />
+                        </columns>
+                    </TableView>
+                </children>
+            </VBox>
+            <!-- Asset Management Form -->
+            <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <children>
+                    <Label text="Manage Asset" />
+                    <VBox fx:id="assetForm" minHeight="150" prefHeight="282.0" prefWidth="435.0" style="-fx-border-color: #888; -fx-border-radius: 10;" spacing="10">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="Asset Symbol " prefWidth="180"/>
+                            <TextField fx:id="assetSymbolField" promptText="Asset Symbol" />
+                        </TextFlow>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="Asset Name " prefWidth="180"/>
+                            <TextField fx:id="assetNameField" promptText="Asset Name" />
+                        </TextFlow>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="Amount to Issue "  prefWidth="180"/>
+                            <TextField fx:id="assetAmountField" promptText="Amount to Issue" />
+                        </TextFlow>
+                        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="LEFT">
+                            <Label text="Total AssetSupply "  prefWidth="180"/>
+                            <Text text="15,000 " />
+                        </TextFlow>
+                        <Separator />
+                        <HBox spacing="5">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Button fx:id="issueButton" text="Issue" onAction="#handleTokenIssue" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+                                <Button fx:id="redeemButton" text="Redeem" HBox.hgrow="ALWAYS" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+                                <Button fx:id="freezeButton" text="Freeze" HBox.hgrow="ALWAYS" style="-fx-background-color: #9E9F9E; -fx-text-fill: white;" />
+                                <Button fx:id="seizeButton" text="Seize" HBox.hgrow="ALWAYS" style="-fx-background-color: #3A0502; -fx-text-fill: white;" />
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </children>
+            </VBox>
+        </children>
+    </GridPane>
+</VBox>
