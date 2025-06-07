@@ -15,8 +15,8 @@
         <module>key-management-service-impl</module>
         <module>blockchain-service-spi</module>
         <module>blockchain-service-impl</module>
-
-
+        <module>wallet-service-spi</module>
+        <module>wallet-service-impl</module>
     </modules>
 
     <properties>
