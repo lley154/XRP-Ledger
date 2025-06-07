@@ -11,6 +11,9 @@
 
     <modules>
         <module>common</module>
+        <module>key-management-service-spi</module>
+        <module>key-management-service-impl</module>
+
     </modules>
 
     <properties>
@@ -44,8 +47,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <release>11</release>
                 </configuration>
             </plugin>
             <plugin>
