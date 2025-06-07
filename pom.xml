@@ -13,6 +13,9 @@
         <module>common</module>
         <module>key-management-service-spi</module>
         <module>key-management-service-impl</module>
+        <module>blockchain-service-spi</module>
+        <module>blockchain-service-impl</module>
+
 
     </modules>
 

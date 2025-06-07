@@ -11,5 +11,5 @@
     </root>
 
     <!-- Set specific logging levels for our package -->
-    <logger name="com.easya.assetmanager" level="DEBUG"/>
+    <logger name="com.easya.assetmanager.blockchain" level="DEBUG"/>
 </configuration> 

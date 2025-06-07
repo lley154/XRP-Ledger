@@ -23,8 +23,8 @@
     </root>
 
     <!-- Set specific logging levels for our package -->
-    <logger name="com.contextsolutions.assetmanager.keymanagement" level="DEBUG"/>
+    <logger name="com.easya.assetmanager.keymanagement" level="DEBUG"/>
     
     <!-- Reduce noise for the test class -->
-    <logger name="com.contextsolutions.assetmanager.keymanagement.impl.KeyManagementServiceImplTest" level="INFO"/>
+    <logger name="com.easya.assetmanager.keymanagement.impl.KeyManagementServiceImplTest" level="INFO"/>
 </configuration> 

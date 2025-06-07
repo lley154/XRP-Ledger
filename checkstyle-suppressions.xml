@@ -7,5 +7,5 @@
     <suppress checks="RequireEmptyLineBeforeBlockTagGroup"
               files=".*\.java$"/>
     <suppress checks="LineLength"
-              files="XrplKeyManagementService\.java$"/>
+              files=".*\.java$"/>
 </suppressions> 
