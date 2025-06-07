@@ -1,1 +1,50 @@
-/target/
+# Rust specific
+target/
+**/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+.directory
+
+# Debug files
+*.pdb
+*.dSYM/
+
+# Build artifacts
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+logs/
+
+# Test coverage
+coverage/
+*.profraw
+
+# Documentation
+doc/
+docs/_build/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
