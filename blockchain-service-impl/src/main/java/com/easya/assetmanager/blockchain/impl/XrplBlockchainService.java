@@ -5,6 +5,7 @@ import com.easya.assetmanager.blockchain.spi.NetworkStatus;
 import com.easya.assetmanager.blockchain.spi.Token;
 import com.easya.assetmanager.blockchain.spi.TransactionDetails;
 import com.easya.assetmanager.blockchain.spi.TransactionStatus;
+import com.easya.assetmanager.common.config.AppConfig;
 import com.easya.assetmanager.common.auth.AuthorizationService;
 import com.easya.assetmanager.keymanagement.impl.XrplKeyManagementService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,6 +18,8 @@ import java.util.Optional;
 import okhttp3.HttpUrl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xrpl.xrpl4j.client.faucet.FaucetClient;
+import org.xrpl.xrpl4j.client.faucet.FundAccountRequest;
 import org.xrpl.xrpl4j.client.JsonRpcClientErrorException;
 import org.xrpl.xrpl4j.client.XrplClient;
 import org.xrpl.xrpl4j.crypto.keys.Base58EncodedSecret;
@@ -522,6 +525,11 @@ public class XrplBlockchainService implements BlockchainService<Address, XrplKey
 
   @Override
   public String topUp(Address address, BigDecimal amount) {
+    if (Boolean.parseBoolean(AppConfig.getProperty("xrpl.is.testnet"))) {
+      FaucetClient faucetClient = FaucetClient.construct(HttpUrl.get("https://faucet.altnet.rippletest.net"));
+      System.out.println("Topped up address: " + address);
+      return faucetClient.fundAccount(FundAccountRequest.of(address)).toString();
+    } else {
     try {
       String gensisAddress = "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh";
       String gensisPrivateKey = "snoPBrXtMeMyMHUVTgbuqAfg1SUTb";
@@ -578,6 +586,7 @@ public class XrplBlockchainService implements BlockchainService<Address, XrplKey
           e.getMessage());
       throw new RuntimeException("Failed to create topup", e);
     }
+  }
   }
 
   @Override

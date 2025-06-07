@@ -184,6 +184,14 @@ public class AssetController {
       protected String call() throws Exception {
         // TODO: Manual topup for local testing
         ApplicationContext.getInstance().getWalletService().getBlockchainService().topUp(tokenIssuerAddress, new BigDecimal("100"));
+        
+        // Add delay to ensure blockchain confirmation
+        try {
+            Thread.sleep(10000); // 10 second delay
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Interrupted while waiting for blockchain confirmation", e);
+        }
         return ApplicationContext.getInstance().getWalletService().getBlockchainService().createColdWalletAccount(
             tokenIssuerAddress,
             ApplicationContext.getInstance().getAuthToken());
@@ -196,6 +204,13 @@ public class AssetController {
       protected String call() throws Exception {
         // TODO: Manual topup for local testing
         ApplicationContext.getInstance().getWalletService().getBlockchainService().topUp(tokenHolderAddress, new BigDecimal("100"));
+        // Add delay to ensure blockchain confirmation
+        try {
+            Thread.sleep(10000); // 10 second delay
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Interrupted while waiting for blockchain confirmation", e);
+        }
         return ApplicationContext.getInstance().getWalletService().getBlockchainService().createHotWalletAccount(
             tokenHolderAddress,
             ApplicationContext.getInstance().getAuthToken());
