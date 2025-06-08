@@ -60,6 +60,7 @@ The project uses:
 - JUnit 5 for testing
 - SLF4J for logging
 - Google Checkstyle for code style enforcement
+- xrpl4j https://github.com/XRPLF/xrpl4j
 
 ## License
 
