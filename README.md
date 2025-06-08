@@ -34,6 +34,8 @@ The project is organized into several modules:
 - **common**: Shared utilities and common code
 - **app**: Main application module
 
+Technical Walkthrough Video: https://youtu.be/xWWmdAvHYEg?si=KK5A5gUtmay_IFDj
+
 ## Requirements
 
 - Java 11 or higher
