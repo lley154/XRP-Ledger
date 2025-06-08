@@ -8,6 +8,7 @@ This project provides a comprehensive asset management solution for the XRP Ledg
 
 
 <img src="images/Home v2.0.png" width="600"/>
+<img src="images/Portfolio v2.0.png" width="600"/>
 
 ## Project Structure
 
@@ -32,6 +33,9 @@ The project is organized into several modules:
 - **common**: Shared utilities and common code
 - **app**: Main application module
 
+<img src="images/Trading.png" width="600"/>
+<img src="images/Asset Management.png" width="600"/>
+
 ## Requirements
 
 - Java 11 or higher
@@ -44,6 +48,7 @@ To build the project, run:
 ```bash
 mvn clean install
 ```
+<img src="images/reports.png" width="600"/>
 
 ## Development
 
