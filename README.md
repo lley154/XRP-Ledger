@@ -6,7 +6,7 @@ A modular Java-based asset management system for the XRP Ledger, built with a se
 
 This project provides a comprehensive asset management solution for the XRP Ledger, implementing various services for account management, wallet operations, blockchain interactions, and key management. The system is designed with a clear separation of concerns using Service Provider Interfaces (SPIs) and their implementations.
 
-<img src="images/Home v2.0.png" width="128"/>
+<img src="images/Home v2.0.png" width="500"/>
 ## Project Structure
 
 The project is organized into several modules:
