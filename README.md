@@ -75,8 +75,4 @@ This project is licensed under the terms included in the LICENSE file.
 
 ## Code Style
 
-The project follows Google Java Style Guide. Code style is enforced using the Maven Checkstyle plugin. You can run the checkstyle verification using:
-
-```bash
-mvn checkstyle:check
-```
+The project follows Google Java Style Guide. Code style is enforced using the Maven Checkstyle plugin.
