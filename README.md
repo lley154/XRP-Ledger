@@ -34,6 +34,10 @@ The project is organized into several modules:
 - **common**: Shared utilities and common code
 - **app**: Main application module
 
+## Application Architecture
+![image](https://github.com/user-attachments/assets/3b3b9e76-2427-4a1c-9389-929f5e7c64af)
+
+
 Technical Walkthrough Video: https://youtu.be/xWWmdAvHYEg?si=KK5A5gUtmay_IFDj
 
 ## Requirements
