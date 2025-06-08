@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets top="0" right="10" bottom="10" left="10"/>
+    </padding>
+    <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+        <Text style="-fx-font-weight: bold;" text="S&amp;P 500 " />
+        <Text text="4,005.44 " />
+        <Text fill="green" text="+0.45%" />
+    </TextFlow>
+    <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+        <Text style="-fx-font-weight: bold;" text="DOW JONES " />
+        <Text text="12,003.33 " />
+        <Text fill="red" text="-0.45%" />
+    </TextFlow>
+    <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+        <Text style="-fx-font-weight: bold;" text="DXY " />
+        <Text text="101.25 " />
+        <Text fill="green" text="0.45%" />
+    </TextFlow>
+    <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+        <Text style="-fx-font-weight: bold;" text="VIX " />
+        <Text text="22.51 " />
+        <Text fill="green" text="0.45%" />
+    </TextFlow>
+        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+        <Text style="-fx-font-weight: bold;" text="BTC " />
+        <Text text="102,322.51 " />
+        <Text fill="red" text="0.45%" />
+    </TextFlow>
+        <TextFlow maxWidth="Infinity" prefHeight="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+        <Text style="-fx-font-weight: bold;" text="XRP " />
+        <Text text="2.51 " />
+        <Text fill="green" text="0.45%" />
+    </TextFlow>
+</HBox> 

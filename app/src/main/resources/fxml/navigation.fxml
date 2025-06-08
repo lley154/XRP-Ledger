@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.fxml.FXML?>
+
+<HBox spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.easya.assetmanager.ui.controller.NavigationController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+    <!-- Header -->
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <fx:include source="header.fxml"/>
+        
+        <!-- Market Summary -->
+        <fx:include source="market-summary.fxml"/>
+        
+        <!-- Main Content Area with Navigation -->
+        <HBox spacing="10">
+            <!-- Navigation Panel -->
+            <VBox spacing="10" prefWidth="250">
+                <Accordion fx:id="navigationAccordion" style="-fx-background-color: transparent;">
+                    <panes>
+                        <TitledPane text="Home" onMouseClicked="#handleHomeClick" expanded="false"/>
+                        <TitledPane text="Portfolio" onMouseClicked="#handlePortfolioClick" expanded="false">
+                            <VBox spacing="5">
+                                <padding>
+                                    <Insets bottom="5" left="10" right="10" top="5" />
+                                </padding>
+                                <Text text="Performance" onMouseClicked="#handlePortfolioClick" style="-fx-cursor: hand;" />
+                                <Text text="Allocation" onMouseClicked="#handlePortfolioClick" style="-fx-cursor: hand;" />
+                                <Text text="Holdings" onMouseClicked="#handlePortfolioClick" style="-fx-cursor: hand;" />
+                                <Text text="Transfer" onMouseClicked="#handlePortfolioClick" style="-fx-cursor: hand;" />
+                            </VBox>
+                        </TitledPane>
+                        
+                        <TitledPane text="Trading" onMouseClicked="#handleTradingClick" expanded="false">
+                            <VBox spacing="5">
+                                <padding>
+                                    <Insets bottom="5" left="10" right="10" top="5" />
+                                </padding>
+                                <Text text="Market Price" onMouseClicked="#handleTradingClick" style="-fx-cursor: hand;" />
+                                <Text text="Order Book" onMouseClicked="#handleTradingClick" style="-fx-cursor: hand;" />
+                                <Text text="Positions" onMouseClicked="#handleTradingClick" style="-fx-cursor: hand;" />
+                                <Text text="Place Order" onMouseClicked="#handleTradingClick" style="-fx-cursor: hand;" />
+                            </VBox>
+                        </TitledPane>
+                        
+                        <TitledPane text="Asset Management" onMouseClicked="#handleAssetManagementClick" expanded="false">
+                            <VBox spacing="5">
+                                <padding>
+                                    <Insets bottom="5" left="10" right="10" top="5" />
+                                </padding>
+                                <Text text="Asset Price" onMouseClicked="#handleAssetManagementClick" style="-fx-cursor: hand;" />
+                                <Text text="Order Book" onMouseClicked="#handleAssetManagementClick" style="-fx-cursor: hand;" />
+                                <Text text="Asset Details" onMouseClicked="#handleAssetManagementClick" style="-fx-cursor: hand;" />
+                                <Text text="Manage Asset" onMouseClicked="#handleAssetManagementClick" style="-fx-cursor: hand;" />
+                            </VBox>
+                        </TitledPane>
+                        
+                        <TitledPane text="Reports" onMouseClicked="#handleReportsClick" expanded="false">
+                            <VBox spacing="5">
+                                <padding>
+                                    <Insets bottom="5" left="10" right="10" top="5" />
+                                </padding>
+                                <Text text="Assets" onMouseClicked="#handleReportsClick" style="-fx-cursor: hand;" />
+                                <Text text="Transactions" onMouseClicked="#handleReportsClick" style="-fx-cursor: hand;" />
+                                <Text text="Statements" onMouseClicked="#handleReportsClick" style="-fx-cursor: hand;" />
+                                <Text text="Tax Documents" onMouseClicked="#handleReportsClick" style="-fx-cursor: hand;" />
+                            </VBox>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+            </VBox>
+            
+            <!-- Main Content Area -->
+            <VBox fx:id="mainContent" HBox.hgrow="ALWAYS" spacing="10">
+                <padding>
+                    <Insets top="0" right="0" bottom="0" left="10"/>
+                </padding>
+            </VBox>
+        </HBox>
+    </VBox>
+</HBox> 
