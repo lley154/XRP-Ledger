@@ -8,6 +8,8 @@ This project provides a comprehensive asset management solution for the XRP Ledg
 
 Demo Video: https://youtu.be/MHx7r6VOYDU?si=7H3dhYueSQqJ2WU5
 
+Testnet Transaction: https://testnet.xrpl.org/accounts/rn896CjbZNTcVaPMy6gs6WPKnbdcNS4tju
+
 
 ## Project Structure
 
