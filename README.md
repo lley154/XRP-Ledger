@@ -12,6 +12,10 @@ Testnet Transaction: https://testnet.xrpl.org/accounts/rn896CjbZNTcVaPMy6gs6WPKn
 
 <img src="images/Home v2.0.png" width="500"/>
 <img src="images/Portfolio v2.0.png" width="500"/>
+<img src="images/Trading.png" width="500"/>
+<img src="images/Asset Management.png" width="500"/>
+<img src="images/reports.png" width="500"/>
+
 
 ## Project Structure
 
@@ -47,8 +51,6 @@ Technical Walkthrough Video: https://youtu.be/xWWmdAvHYEg?si=KK5A5gUtmay_IFDj
 - Java 11 or higher
 - Maven 3.6 or higher
 
-<img src="images/Trading.png" width="500"/>
-<img src="images/Asset Management.png" width="500"/>
 
 ## Building the Project
 
@@ -67,7 +69,7 @@ The project uses:
 - Google Checkstyle for code style enforcement
 - xrpl4j https://github.com/XRPLF/xrpl4j
 
-<img src="images/reports.png" width="500"/>
+
 
 ## License
 
